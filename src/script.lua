@@ -4,7 +4,6 @@
 	game.Players.PlayerAdded:Connect(function(player)
 		player.Chatted:Connect(function(msg)
 		    local pfp_url = "https://api.newstargeted.com/roblox/users/v1/avatar-headshot?userid="..player.UserId.."&size=150x150&format=Png&isCircular=false"
-			print(pfp_url)
 
 			local data = {
 				username = player.Name,
@@ -13,6 +12,5 @@
 			}
 			
 			local response = HttpService:PostAsync(url, HttpService:JSONEncode(data))
-			print(response)
 		end)
 	end)
